@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SummAIze - Intelligent Summaries</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+    <div class="background-blobs"></div>
+
+    <nav class="main-nav">
+        <div class="nav-content">
+            <span class="logo">SummAIze AI</span>
+            <button id="theme-toggle" class="theme-toggle" title="Toggle Theme">
+                <!-- Sun Icon -->
+                <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                <!-- Moon Icon -->
+                <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+            </button>
+        </div>
+    </nav>
+
+    <div class="app-container">
+        <header class="hero-section">
+            <h1 class="hero-title">Clarity in an Instant.</h1>
+            <p class="hero-subtitle">Transform long documents into concise summaries. SummAIze helps you grasp key ideas faster than ever before.</p>
+            <a href="#summarizer-section" class="cta-button">Start Summarizing</a>
+        </header>
+
+        <main>
+            <section id="summarizer-section" class="summarizer-card">
+                <form id="summarizer-form">
+                    <div class="input-area">
+                        <textarea id="text-input" name="text_input" placeholder="Paste your text here or upload a document..."></textarea>
+                        <input type="file" id="document-input" name="document_input" accept=".txt,.pdf,.docx,.xlsx,.xls" style="display: none;">
+                        <label for="document-input" class="upload-btn" title="Upload a document">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg>
+                        </label>
+                    </div>
+                    <div id="file-name-display"></div>
+                    <button type="submit" class="summarize-btn">Generate Summary</button>
+                </form>
+
+                <div id="result-container" style="display: none;">
+                    <div class="result-header">
+                        <h2>Key Insights</h2>
+                        <button id="download-btn" class="download-btn" style="display: none;">Download as PDF</button>
+                    </div>
+                    <div id="loading-spinner" class="spinner" style="display: none;"></div>
+                    <div id="summary-output"></div>
+                </div>
+            </section>
+        </main>
+
+         <p class="hero-subtitle">If you face any error or any problem during the use then please try after 1 minute </p>
+        
+        <footer class="app-footer">
+            <p>&copy; 2025 SummAIze. Designed with ❤️.</p>
+        </footer>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
